@@ -1,0 +1,30 @@
+
+.row-full-center{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-full-left{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-full-between{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-card{
+  padding: 25rpx 30rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .hidden {
+    visibility: hidden;
+  }
