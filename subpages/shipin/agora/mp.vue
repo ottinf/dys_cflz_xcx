@@ -330,8 +330,8 @@ export default {
         if (!this.token) {
           console.log('[Token获取] 开始获取Agora Token');
           let res = await this.$api.base.GetAgoraToken({
-            channel: this.channel,
-            uid: this.uid,
+            Channel: this.channel,
+            Uid: this.uid,
             Id: this.data.Id
           });
           if (res.Success) {
@@ -348,11 +348,6 @@ export default {
         }
 
         await this.authorize(); // 授权摄像头和麦克风
-        console.log('[频道操作] 准备加入频道', {
-          token: this.token,
-          channel: this.channel,
-          uid: this.uid
-        });
 
         await client.join(this.token, this.channel + '', Number(this.uid)); // 加入频道
         console.log('[频道操作] 加入频道成功');
@@ -417,8 +412,6 @@ export default {
         this.remote_stream = null;
         console.log('[远程流] 开始订阅患者流');
         client.subscribe(e.uid, (stream) => {
-          console.log(stream, 'stream')
-          console.log(e, 'eeeee')
           this.remote_stream = stream;
           console.log('[远程流] 订阅患者流成功');
         }, err => {
